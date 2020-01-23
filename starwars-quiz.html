@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Star Wars Quiz</title>
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
-    <script
-      defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
   </head>
   <body>
     <div class="tile is-ancestor" style="text-align: center;">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Dates</p>
+          <p class="title">Ships</p>
         </article>
       </div>
       <div class="tile is-parent">
@@ -31,65 +31,373 @@
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="aleph">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="iod">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="beth">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="caph">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="gimel">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="lamed">$200</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="daleth">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="mem">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="he">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="nun">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="vau">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="samech">$600</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="zain">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="ain">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="cheth">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="pe">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="theth">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="zade">$800</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
-    
-          
+
+    <div>
+      <input id="kuff">
+      <button id="res">Enter</button>
+    </div>
         
     <script src="script.js"></script>
+    <script>
+      var questionsShips = [
+        {
+          question: "What is the name of Han Solo's ship?",
+          answer: "10",
+          regarding: "starships"
+        },
+        {
+          question: "What style ship does Luke use in the Battle of Yavin?",
+          answer: "12",
+          regarding: "starships"
+        },
+        {
+          question: "What is the name of Darth Vader's Star Destroyer?",
+          answer: "8",
+          regarding: "starships"
+        }
+      ];
+
+      var questionsPlaces = [
+        {
+          question: "Where did Luke Skywalker grow up?",
+          answer: "1",
+          regarding: "planets"
+        },
+        {
+          question: "What was the second target of the Death Star in 'A New Hope'?",
+          answer: "3",
+          regarding: "planets"
+        },
+        {
+          question: "What is Darth Maul's Homeworld?",
+          answer: "36",
+          regarding: "planets"
+        }
+      ];
+
+      var questionsRandom = [
+        {
+          question: "What year was the Original Star Wars Movie first released?",
+          answer: "1",
+          regarding: "films"
+        },
+        {
+          question: "What species is Admiral Ackbar?",
+          answer: "8",
+          regarding: "species"
+        },
+        {
+          question: "Who was Luke's friend who joined the rebellion?",
+          answer: "9",
+          regarding: "people"
+        }
+      ];
+
+      var category = "";
+      var itemNo = "";
+      var queryURL = "";
+      var answer = "";
+      var correct = "";
+      var score = 0;
+
+      $("#aleph").click(function() {
+        $("#aleph").unbind();
+        category = questionsShips[0].regarding;
+        itemNo = questionsShips[0].answer;
+        $("#iod").text(questionsShips[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 200;
+              $("#iod").text("$200");
+              $("#aleph").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#iod").text("$200");
+              $("#aleph").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#beth").click(function() {
+        $("#beth").unbind();
+        category = questionsPlaces[0].regarding;
+        itemNo = questionsPlaces[0].answer;
+        $("#caph").text(questionsPlaces[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 200;
+              $("#caph").text("$200");
+              $("#beth").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#caph").text("$200");
+              $("#beth").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#gimel").click(function() {
+        $("#gimel").unbind();
+        category = questionsRandom[0].regarding;
+        itemNo = questionsRandom[0].answer;
+        $("#lamed").text(questionsRandom[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 200;
+              $("#lamed").text("$200");
+              $("#gimel").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#lamed").text("$200");
+              $("#gimel").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+      
+      $("#daleth").click(function() {
+        $("#daleth").unbind();
+        category = questionsShips[1].regarding;
+        itemNo = questionsShips[1].answer;
+        $("#mem").text(questionsShips[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 600;
+              $("#mem").text("$600");
+              $("#daleth").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#mem").text("$600");
+              $("#daleth").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#he").click(function() {
+        $("#he").unbind();
+        category = questionsPlaces[1].regarding;
+        itemNo = questionsPlaces[1].answer;
+        $("#nun").text(questionsPlaces[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 600;
+              $("#nun").text("$600");
+              $("#he").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#nun").text("$600");
+              $("#he").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#vau").click(function() {
+        $("#vau").unbind();
+        category = questionsRandom[1].regarding;
+        itemNo = questionsRandom[1].answer;
+        $("#samech").text(questionsRandom[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 600;
+              $("#samech").text("$600");
+              $("#vau").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#samech").text("$600");
+              $("#vau").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#zain").click(function() {
+        $("#zain").unbind();
+        category = questionsShips[2].regarding;
+        itemNo = questionsShips[2].answer;
+        $("#ain").text(questionsShips[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              $("#ain").text("$800");
+              $("#zain").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#ain").text("$800");
+              $("#zain").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#cheth").click(function() {
+        $("#cheth").unbind();
+        category = questionsPlaces[2].regarding;
+        itemNo = questionsPlaces[2].answer;
+        $("#pe").text(questionsPlaces[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              $("#pe").text("$800");
+              $("#cheth").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#pe").text("$800");
+              $("#cheth").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+
+      $("#theth").click(function() {
+        $("#theth").unbind();
+        category = questionsRandom[2].regarding;
+        itemNo = questionsRandom[2].answer;
+        $("#zade").text(questionsRandom[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              $("#zade").text("$800");
+              $("#theth").addClass("has-background-success");
+              console.log(score);
+            } else {
+              $("#zade").text("$800");
+              $("#theth").addClass("has-background-danger");
+              console.log(score);
+            }
+          });
+        });
+      });
+      </script>
   </body>
 </html>
