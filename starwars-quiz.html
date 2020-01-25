@@ -5,16 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Star Wars Quiz</title>
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
-    <script
-      defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
+
   </head>
   <body>
-    <div class="tile is-ancestor" style="text-align: center;">
+    <container>
+      <section class="hero is-dark">
+        <div class="hero-body">
+          <div class="container" style="text-align: center;">
+            <h1 class="title">
+              Click to select your question! </h1>
+          </div>
+        </div>
+      </section>
+        <div class="message-body">
+            <div class="tile is-ancestor" style="text-align: center;">
       <div class="tile is-parent">
         <article class="tile is-child box">
-          <p class="title">Dates</p>
+          <p class="title">Ships</p>
         </article>
       </div>
       <div class="tile is-parent">
@@ -31,65 +42,718 @@
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="aleph">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="iod">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="beth">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="caph">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="gimel">
         <article class="tile is-child box">
-          <p class="title">$200</p>
+          <p class="title" id="lamed">$200</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="daleth">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="mem">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="he">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="nun">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="vau">
         <article class="tile is-child box">
-          <p class="title">$600</p>
+          <p class="title" id="samech">$600</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="zain">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="ain">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="cheth">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="pe">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
+      <div class="tile is-parent" id="theth">
         <article class="tile is-child box">
-          <p class="title">$800</p>
+          <p class="title" id="zade">$800</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Answer here" id="kuff">
+      </div>
+      <div class="control ">
+        <a class="button is-black" id="res">
+          Enter
+        </a>
+      </div>
+    </div>
+  </div>
+    </container>
+    <div class="footer" style="background-color: black;">
+        <p>
+          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</strong></a>
+          <a href="index.html">Home</a>
+        </p>
     
-          
+  </div>
         
     <script src="script.js"></script>
+    <script>
+      var questionsShips = [
+        {
+          question: "What is the name of Han Solo's ship?",
+          answer: "10",
+          regarding: "starships"
+        },
+        {
+          question: "What style ship does Luke use in the Battle of Yavin?",
+          answer: "12",
+          regarding: "starships"
+        },
+        {
+          question: "What is the model of Luke's Landspeeder in 'A New Hope'?",
+          answer: "7",
+          regarding: "vehicles"
+        }
+      ];
+
+      var questionsPlaces = [
+        {
+          question: "Where did Luke Skywalker grow up?",
+          answer: "1",
+          regarding: "planets"
+        },
+        {
+          question: "What was the second target of the Death Star in 'A New Hope'?",
+          answer: "3",
+          regarding: "planets"
+        },
+        {
+          question: "What is Darth Maul's Homeworld?",
+          answer: "36",
+          regarding: "planets"
+        }
+      ];
+
+      var questionsRandom = [
+        {
+          question: "What year was the first Star Wars film initially released?",
+          answer: "1",
+          regarding: "films"
+        },
+        {
+          question: "What species is Admiral Ackbar?",
+          answer: "8",
+          regarding: "species"
+        },
+        {
+          question: "Who was Luke's friend who joined the rebellion?",
+          answer: "9",
+          regarding: "people"
+        }
+      ];
+
+      var category = "";
+      var itemNo = "";
+      var queryURL = "";
+      var answer = "";
+      var correct = "";
+      var score = 0;
+      var count = 0;
+      var badTouch = false;
+
+      $("#aleph").click(function() {
+        $("#aleph").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsShips[0].regarding;
+        itemNo = questionsShips[0].answer;
+        $("#iod").text(questionsShips[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 200;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#iod").text("$200");
+              $("#aleph").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#iod").text("$200");
+              $("#aleph").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#beth").click(function() {
+        $("#beth").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsPlaces[0].regarding;
+        itemNo = questionsPlaces[0].answer;
+        $("#caph").text(questionsPlaces[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 200;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#caph").text("$200");
+              $("#beth").addClass("has-background-success");
+              pleaseStop = "stop";
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#caph").text("$200");
+              $("#beth").addClass("has-background-danger");
+              pleaseStop = "stop";
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#gimel").click(function() {
+        $("#gimel").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsRandom[0].regarding;
+        itemNo = questionsRandom[0].answer;
+        $("#lamed").text(questionsRandom[0].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val() + "-05-25";
+            correct = response.release_date;
+            if(answer === correct) {
+              score = score + 200;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#lamed").text("$200");
+              $("#gimel").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#lamed").text("$200");
+              $("#gimel").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+      
+      $("#daleth").click(function() {
+        $("#daleth").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsShips[1].regarding;
+        itemNo = questionsShips[1].answer;
+        $("#mem").text(questionsShips[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 600;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#mem").text("$600");
+              $("#daleth").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#mem").text("$600");
+              $("#daleth").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#he").click(function() {
+        $("#he").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsPlaces[1].regarding;
+        itemNo = questionsPlaces[1].answer;
+        $("#nun").text(questionsPlaces[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              count = count + 1;
+              score = score + 600;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#nun").text("$600");
+              $("#he").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#nun").text("$600");
+              $("#he").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#vau").click(function() {
+        $("#vau").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsRandom[1].regarding;
+        itemNo = questionsRandom[1].answer;
+        $("#samech").text(questionsRandom[1].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 600;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#samech").text("$600");
+              $("#vau").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#zain").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#samech").text("$600");
+              $("#vau").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#zain").click(function() {
+        $("#zain").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#cheth").hide();
+          $("#theth").hide();
+        }
+        category = questionsShips[2].regarding;
+        itemNo = questionsShips[2].answer;
+        $("#ain").text(questionsShips[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val() + " landspeeder";
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#ain").text("$800");
+              $("#zain").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#cheth").show();
+                $("#theth").show();
+              }
+              $("#ain").text("$800");
+              $("#zain").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#cheth").click(function() {
+        $("#cheth").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#theth").hide();
+        }
+        category = questionsPlaces[2].regarding;
+        itemNo = questionsPlaces[2].answer;
+        $("#pe").text(questionsPlaces[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#theth").show();
+              }
+              $("#pe").text("$800");
+              $("#cheth").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#theth").show();
+              }
+              $("#pe").text("$800");
+              $("#cheth").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+
+      $("#theth").click(function() {
+        $("#theth").unbind();
+        badTouch = true;
+        if(badTouch) {
+          $("#aleph").hide();
+          $("#beth").hide();
+          $("#gimel").hide();
+          $("#daleth").hide();
+          $("#he").hide();
+          $("#vau").hide();
+          $("#zain").hide();
+          $("#cheth").hide();
+        }
+        category = questionsRandom[2].regarding;
+        itemNo = questionsRandom[2].answer;
+        $("#zade").text(questionsRandom[2].question);
+        queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
+        $("#res").click(function() {
+          $("#res").unbind();
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+            answer = $("#kuff").val();
+            correct = response.name;
+            if(answer === correct) {
+              score = score + 800;
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+              }
+              $("#zade").text("$800");
+              $("#theth").addClass("has-background-success");
+              console.log(count);
+            } else {
+              count = count + 1;
+              badTouch = false;
+              if(!badTouch) {
+                $("#aleph").show();
+                $("#beth").show();
+                $("#gimel").show();
+                $("#daleth").show();
+                $("#he").show();
+                $("#vau").show();
+                $("#zain").show();
+                $("#cheth").show();
+              }
+              $("#zade").text("$800");
+              $("#theth").addClass("has-background-danger");
+              console.log(count);
+            }
+          });
+        });
+      });
+      if(count === 9) {
+        console.log("aggripa");
+      }
+      </script>
   </body>
 </html>
