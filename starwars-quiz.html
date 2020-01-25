@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Star Wars Quiz</title>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="starwars.css">
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
@@ -12,7 +13,17 @@
       defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
   </head>
   <body>
-    <div class="tile is-ancestor" style="text-align: center;">
+    <container>
+      <section class="hero is-dark">
+        <div class="hero-body">
+          <div class="container" style="text-align: center;">
+            <h1 class="title">
+              Click to select your question! </h1>
+          </div>
+        </div>
+      </section>
+        <div class="message-body">
+            <div class="tile is-ancestor" style="text-align: center;">
       <div class="tile is-parent">
         <article class="tile is-child box">
           <p class="title">Dates</p>
@@ -88,7 +99,26 @@
         </article>
       </div>
     </div>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Answer here">
+      </div>
+      <div class="control ">
+        <a class="button is-black">
+          Enter
+        </a>
+      </div>
+    </div>
+  </div>
+    </container>
+    <div class="footer" style="background-color: black;">
+        <p>
+          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</strong></a>
+          <a href="index.html">Home</a>
+        </p>
     
+  </div>
+
           
         
     <script src="script.js"></script>

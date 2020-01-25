@@ -49,7 +49,7 @@ html {
   .mainIMG{
     width: 600px;
     position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%); 
@@ -59,9 +59,10 @@ html {
 
   }
   .container{
-    padding: 10px;
+    padding: 20px;
     color: yellow;
     font-family: 'Creepster', cursive;
+    font-size: 20px;
 
   }
 
