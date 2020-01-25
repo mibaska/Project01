@@ -64,16 +64,6 @@ $.ajax({
 
 });
 
-$.ajax({
-  url: 'https://rickandmortyapi.com/api/episode?=',
-  method: 'GET'
-})
-.then (function(ep1Response){
-  console.log(ep1Response.id[1].air_date, 'Date Question 1'); //Date Question 1
-  //varibles for Answer
-  epQuestion1 = ep1Response.id[1].air_date ;
-});
-
 //array for questions
 
 
