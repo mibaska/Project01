@@ -133,7 +133,7 @@
 
       var questionsRandom = [
         {
-          question: "What year was the Original Star Wars Movie first released?",
+          question: "What year was the first Star Wars film initially released?",
           answer: "1",
           regarding: "films"
         },
@@ -154,7 +154,9 @@
       var queryURL = "";
       var answer = "";
       var correct = "";
+      var pleaseStop = "start";
       var score = 0;
+      var count = 0;
 
       $("#aleph").click(function() {
         $("#aleph").unbind();
@@ -163,6 +165,7 @@
         $("#iod").text(questionsShips[0].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -171,13 +174,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 200;
+              count = count + 1;
               $("#iod").text("$200");
               $("#aleph").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#iod").text("$200");
               $("#aleph").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -190,6 +195,7 @@
         $("#caph").text(questionsPlaces[0].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -198,13 +204,17 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 200;
+              count = count + 1;
               $("#caph").text("$200");
               $("#beth").addClass("has-background-success");
-              console.log(score);
+              pleaseStop = "stop";
+              console.log(count);
             } else {
+              count = count + 1;
               $("#caph").text("$200");
               $("#beth").addClass("has-background-danger");
-              console.log(score);
+              pleaseStop = "stop";
+              console.log(count);
             }
           });
         });
@@ -217,21 +227,24 @@
         $("#lamed").text(questionsRandom[0].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
           }).then(function(response) {
             answer = $("#kuff").val();
-            correct = response.name;
+            correct = response.release_date + "-05-25";
             if(answer === correct) {
               score = score + 200;
+              count = count + 1;
               $("#lamed").text("$200");
               $("#gimel").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#lamed").text("$200");
               $("#gimel").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -244,6 +257,7 @@
         $("#mem").text(questionsShips[1].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -252,13 +266,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 600;
+              count = count + 1;
               $("#mem").text("$600");
               $("#daleth").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#mem").text("$600");
               $("#daleth").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -271,6 +287,7 @@
         $("#nun").text(questionsPlaces[1].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -278,14 +295,16 @@
             answer = $("#kuff").val();
             correct = response.name;
             if(answer === correct) {
+              count = count + 1;
               score = score + 600;
               $("#nun").text("$600");
               $("#he").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#nun").text("$600");
               $("#he").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -298,6 +317,7 @@
         $("#samech").text(questionsRandom[1].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -306,13 +326,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 600;
+              count = count + 1;
               $("#samech").text("$600");
               $("#vau").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#samech").text("$600");
               $("#vau").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -325,6 +347,7 @@
         $("#ain").text(questionsShips[2].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -333,13 +356,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 800;
+              count = count + 1;
               $("#ain").text("$800");
               $("#zain").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#ain").text("$800");
               $("#zain").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -352,6 +377,7 @@
         $("#pe").text(questionsPlaces[2].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -360,13 +386,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 800;
+              count = count + 1;
               $("#pe").text("$800");
               $("#cheth").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#pe").text("$800");
               $("#cheth").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
@@ -379,6 +407,7 @@
         $("#zade").text(questionsRandom[2].question);
         queryURL = "https://swapi.co/api/" + category + "/" + itemNo + "/";
         $("#res").click(function() {
+          $("#res").unbind();
           $.ajax({
             url: queryURL,
             method: "GET"
@@ -387,13 +416,15 @@
             correct = response.name;
             if(answer === correct) {
               score = score + 800;
+              count = count + 1;
               $("#zade").text("$800");
               $("#theth").addClass("has-background-success");
-              console.log(score);
+              console.log(count);
             } else {
+              count = count + 1;
               $("#zade").text("$800");
               $("#theth").addClass("has-background-danger");
-              console.log(score);
+              console.log(count);
             }
           });
         });
