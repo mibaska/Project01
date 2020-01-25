@@ -8,10 +8,21 @@
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" ></script
+
   </head>
   <body>
-    <div class="tile is-ancestor" style="text-align: center;">
+    <container>
+      <section class="hero is-dark">
+        <div class="hero-body">
+          <div class="container" style="text-align: center;">
+            <h1 class="title">
+              Click to select your question! </h1>
+          </div>
+        </div>
+      </section>
+        <div class="message-body">
+            <div class="tile is-ancestor" style="text-align: center;">
       <div class="tile is-parent">
         <article class="tile is-child box">
           <p class="title">Ships</p>
@@ -87,11 +98,25 @@
         </article>
       </div>
     </div>
-
-    <div>
-      <input id="kuff">
-      <button id="res">Enter</button>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Answer here" id="kuff">
+      </div>
+      <div class="control ">
+        <a class="button is-black" id="res">
+          Enter
+        </a>
+      </div>
     </div>
+  </div>
+    </container>
+    <div class="footer" style="background-color: black;">
+        <p>
+          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</strong></a>
+          <a href="index.html">Home</a>
+        </p>
+    
+  </div>
         
     <script src="script.js"></script>
     <script>

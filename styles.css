@@ -30,4 +30,39 @@ html {
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
   }
-  
+  .card-footer {
+    font-family: 'Geostar', cursive;
+    color: yellow;
+    font-size: 40px;
+  }
+  /* THis is for the color of the links*/
+  a:link {
+    color: yellow;
+  }
+  a:hover {
+    color: turquoise;
+  }
+  a:active {
+    color: yellow;
+  }
+  /* THis is for the main image*/
+  .mainIMG{
+    width: 600px;
+    position: absolute;
+        top: 60%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); 
+        display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .container{
+    padding: 20px;
+    color: yellow;
+    font-family: 'Creepster', cursive;
+    font-size: 20px;
+
+  }
+
