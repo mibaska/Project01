@@ -71,9 +71,10 @@ $.ajax({
 //compare user answer to correct answer
 
 //functions for displaying questions
-$('char2').click(function){
-    
-};
+$('#parentChar2').click(function(){
+  $('#parentChar2').unbind();
+  $("#char2").text(chrArray[0].title);
+});
 
 
 //array for character questions
