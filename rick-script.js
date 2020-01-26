@@ -71,9 +71,10 @@ $.ajax({
 //compare user answer to correct answer
 
 //functions for displaying questions
-$(funciton(){
-  chrArray
-})
+$('char2').click(function){
+    
+};
+
 
 //array for character questions
 const chrArray = [
