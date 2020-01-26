@@ -1,8 +1,4 @@
-//variable for each type of call
-// const charcterCall = 'https://rickandmortyapi.com/api/character/';
-// const locationCall = 'https://rickandmortyapi.com/api/location/';
-// const epCall = 'https://rickandmortyapi.com/api/episode/';
-
+//original API URL
 const queryURL = 'https://rickandmortyapi.com/api/character/';
 
 //create ajax call
@@ -64,8 +60,20 @@ $.ajax({
 
 });
 
-//array for questions
+//counter for items
+//keep score
+//click function for dollars
+//send questions for html
+//display total at end of quiz
+//input button for answer
+//make user input all lowercase
+//make answer all lowercase
+//compare user answer to correct answer
 
+//functions for displaying questions
+$(funciton(){
+  chrArray
+})
 
 //array for character questions
 const chrArray = [
