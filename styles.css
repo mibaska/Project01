@@ -1,25 +1,30 @@
 html {
-    position: fixed;
-    background-image: url("https://ak1.picdn.net/shutterstock/videos/1007387521/thumb/1.jpg");
-    z-index: 2;
-    cursor: pointer;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: 'Geostar', cursive;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    height: 300px;
-    padding-top: 120px;
-    box-sizing: border-box;
-    -webkit-animation: slide 20s linear infinite;
+  position: fixed;
+  background-image: url("https://ak1.picdn.net/shutterstock/videos/1007387521/thumb/1.jpg");
+  z-index: 2;
+  cursor: pointer;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Geostar', cursive;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
   }
-  @-webkit-keyframes slide {
-      from { background-position: 0 0; }
-      to { background-position: -400px 0; }
+  to {
+    background-position: -400px 0;
   }
+}
 
   #text{
     position: absolute;
@@ -65,4 +70,5 @@ html {
     font-size: 20px;
 
   }
+
 

@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <title>Rick and Morty Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="rickmorty.css">
+
 </head>
-<body>
-    
-</body>
+<div class="container">
+  <h1>Click to Select the Questions!</h1>
+
+  <body>
+    <div class="tile is-ancestor" style="text-align: center;">
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Characters</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Locations</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box">
+          <p class="title">Random</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-ancestor" style="text-align: center;">
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="date2">
+          <p class="title">$200</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="place2">
+          <p class="title">$200</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="random2">
+          <p class="title">$200</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-ancestor" style="text-align: center;">
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="date6">
+          <p class="title">$600</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="place6">
+          <p class="title">$600</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="random6">
+          <p class="title">$600</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-ancestor" style="text-align: center;">
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="date8">
+          <p class="title">$800</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="place8">
+          <p class="title">$800</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child box" id="random8">
+          <p class="title">$800</p>
+          <div class="content">
+          </div>
+        </article>
+      </div>
+    </div>
+    <br>
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <input class="input" type="text" placeholder="User Answer">
+      </p>
+      <p class="control is-expanded">
+        <a class="button is-info">
+          Submit
+        </a>
+      </p>
+    </div>
+
+
+
+    <script src="script.js"></script>
+  </body>
+
 </html>
