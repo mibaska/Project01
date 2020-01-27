@@ -129,12 +129,6 @@ var randomArray = [
       answer: "female" //count male = 371 female = 74
     },
 ];
-  });
-    });
-      });
-        });
-//pass questions to HTML
-
 //functions for displaying questions
 $(function () {
   $('#parentChar2').click(function(){
@@ -145,7 +139,16 @@ $(function () {
       $('#parentPlace2').unbind();
       $('#place2').text(locArray[0].title);
   });
+  
+
 });
+  });
+    });
+      });
+        });
+//pass questions to HTML
+
+
   
 //submit answer to check
 $('button').on('click', function(event){
