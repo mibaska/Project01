@@ -139,7 +139,34 @@ $(function () {
       $('#parentPlace2').unbind();
       $('#place2').text(locArray[0].title);
   });
-  
+  $('#parentRandom2').click(function(){
+      $('#parentRandom2').unbind();
+      $('#random2').text(randomArray[0].title);
+  });
+  $('#parentChar6').click(function(){
+      $('#parentChar6').unbind();
+      $('#char6').text(chrArray[1].title);
+  });
+  $('#parentPlace6').click(function(){
+      $('parentPlace6').unbind();
+      $('#place6').text(locArray[1].title);
+  });
+  $('#parentRandom6').click(function(){
+      $('#parentRandom6').unbind();
+      $('random6').text(randomArray[1].title);
+  });
+  $('#parentChar8').click(function(){
+      $('parentChar8').unbind();
+      $('#char8').text(chrArray[2].title);
+  });
+  $('parentPlace8').click(function(){
+      $('#parentPlace8').unbind();
+      $('#place').text(locArray[2].title);
+  });
+  $('#parentRandom8').click(function(){
+      $('parentRandom8').unbind();
+      $('random8').text(randomArray[2].title);
+  });
 
 });
   });
