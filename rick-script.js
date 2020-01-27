@@ -63,8 +63,8 @@ $.ajax({
 
 //counter for items
 //keep score
-//click function for dollars
-//send questions for html
+
+
 //display total at end of quiz
 //input button for answer
 //make user input all lowercase
@@ -129,6 +129,7 @@ var randomArray = [
       answer: "female" //count male = 371 female = 74
     },
 ];
+
 //functions for displaying questions
 $(function () {
   $('#parentChar2').click(function(){
