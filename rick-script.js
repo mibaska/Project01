@@ -154,19 +154,19 @@ $(function () {
   });
   $('#parentRandom6').click(function(){
       $('#parentRandom6').unbind();
-      $('random6').text(randomArray[1].title);
+      $('#random6').text(randomArray[1].title);
   });
   $('#parentChar8').click(function(){
-      $('parentChar8').unbind();
+      $('#parentChar8').unbind();
       $('#char8').text(chrArray[2].title);
   });
-  $('parentPlace8').click(function(){
+  $('#parentPlace8').click(function(){
       $('#parentPlace8').unbind();
-      $('#place').text(locArray[2].title);
+      $('#place8').text(locArray[2].title);
   });
   $('#parentRandom8').click(function(){
-      $('parentRandom8').unbind();
-      $('random8').text(randomArray[2].title);
+      $('#parentRandom8').unbind();
+      $('#random8').text(randomArray[2].title);
   });
 
 });
