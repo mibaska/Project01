@@ -1,19 +1,23 @@
-.input, .textarea {
-  
+container {
+    box-sizing: content-box;
+}
+.title {
+    font-size: 30px;
     text-align: center;
-    max-width: 60%;
-    
+    font-family: 'Special Elite', cursive;
 }
 
-
-h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: xx-large;
-    
-
-}
-
+.footer {
+     text-align: center;
+     background-color: black;
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
+    color: yellow;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+ }
 
   
 
