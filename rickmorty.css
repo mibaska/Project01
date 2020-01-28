@@ -1,19 +1,24 @@
-.input, .textarea {
-  
-    text-align: center;
-    max-width: 60%;
-    
+container {
+    box-sizing: content-box;
 }
-.butt
-
-h1 {
+.title {
+    font-size: 30px;
     text-align: center;
-    font-weight: bold;
-    font-size: xx-large;
-    background-color: white;
-
-
+    font-family: 'Special Elite', cursive;
 }
+
+.ender {
+     text-align: center;
+     background-color: black;
+    font-family: 'Special Elite', cursive;
+    font-size: 20px;
+    color: yellow;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    padding: 20px;
+ }
 
   
 
