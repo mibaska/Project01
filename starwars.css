@@ -10,12 +10,17 @@ container {
     position:fixed;
     background-color: black;
     font-family: 'Special Elite', cursive;
-    font-size: 20px;
+    font-size: 18px;
     left:0;
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 2px;
+    height: 9%;
     padding: 20px;
+
+}
+
+.modal {
+    font-family: 'Special Elite', cursive;
 
 }
