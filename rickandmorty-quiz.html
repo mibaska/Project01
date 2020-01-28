@@ -3,6 +3,29 @@
 
 <head>
 
+  <title>Rick and Morty Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="rickmorty.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+  <container>
+   <section class="hero is-dark">
+      <div class="hero-body">
+        <div class="container" style="text-align: center;">
+          <h1 class="title">
+            Click to select your question! </h1>
+        </div>
+      </div>
+    </section>
+    <div class="message-body">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -93,6 +116,47 @@
         </article>
       </div>
     </div>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Answer here" id="kuff">
+      </div>
+      <div class="control ">
+        <a class="button is-black" id="res">
+          Enter
+        </a>
+        </div>
+      </div>
+    </div>
+  </container>
+  <div class="footer" style="background-color: black;">
+    <p>
+      <a href="starwars-quiz.html"> <strong>Try Star Wars Quiz!</a>
+      <br>
+      <a href="index.html">Home</a>
+      <br>
+      <a href="#">Check Highscores!</a></strong>
+    </p>
+
+  </div>
+  </div>
+  <div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"> View HighScores!</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <h1>HighScore:</h1>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success"> Try for a better Scrore</button>
+      <button class="button is-success">Back to HomE</button>
+      <button class="button">Cancel</button>
+    </footer>
+   </div>
+  </div>
+
 
     <div class="field has-addons">
       <div class="control is-expanded">
@@ -105,6 +169,7 @@
   </container>     
     <script src="./rick-script.js"></script>
 
-  </body>
 
+    <script src="script.js"></script>
+  </body>
 </html>

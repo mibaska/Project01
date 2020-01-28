@@ -5,6 +5,7 @@ var correctAnswer2;
 var correctAnswer6;
 var correctAnswer8;
 var counter = 0;
+
 //create ajax call
 $.ajax({
     url:queryURL,
@@ -97,7 +98,7 @@ $('#submit').click(function(){
         console.log(score);
         $('#answer').val('');
       }
-     
+      console.log(counter);
 });
 
 //array for character questions
@@ -162,68 +163,78 @@ var randomArray = [
 //functions for displaying questions
 $(function () {
   $('#parentChar2').click(function(){
+    counter = counter + 1;
     $('#parentChar2').unbind();
      $("#char2").text(chrArray[0].title);
      correctAnswer2 = chrArray[0].answer;
-     counter = counter + 1;
+     
   });
   $('#parentPlace2').click(function(){
+      counter = counter + 1;
       $('#parentPlace2').unbind();
       $('#place2').text(locArray[0].title);
       correctAnswer2 = locArray[0].answer;
-      counter = counter + 1;
+      
   });
   $('#parentRandom2').click(function(){
+    counter = counter + 1;
       $('#parentRandom2').unbind();
       $('#random2').text(randomArray[0].title);
       correctAnswer2 = randomArray[0].answer;
-      counter = counter + 1;
+      
   });
   $('#parentChar6').click(function(){
+      counter = counter + 1;
       $('#parentChar6').unbind();
       $('#char6').text(chrArray[1].title);
       correctAnswer6 = chrArray[1].answer;
-      counter = counter + 1;
+      
   });
   $('#parentPlace6').click(function(){
+      counter = counter + 1;
       $('parentPlace6').unbind();
       $('#place6').text(locArray[1].title);
       correctAnswer6 = locArray[1].answer;
-      counter = counter + 1;
+      
   });
   $('#parentRandom6').click(function(){
+      counter = counter + 1;
       $('#parentRandom6').unbind();
       $('#random6').text(randomArray[1].title);
       correctAnswer6 = randomArray[1].answer;
-      counter = counter + 1;
+      
   });
   $('#parentChar8').click(function(){
+      counter = counter + 1;
       $('#parentChar8').unbind();
       $('#char8').text(chrArray[2].title);
       correctAnswer8 = chrArray[2].title;
-      counter = counter + 1;
+      
   });
   $('#parentPlace8').click(function(){
+      counter = counter + 1;
       $('#parentPlace8').unbind();
       $('#place8').text(locArray[2].title);
       correctAnswer8 = locArray[2].answer;
-      counter = counter + 1;
+      
   });
   $('#parentRandom8').click(function(){
+      counter = counter + 1;
       $('#parentRandom8').unbind();
       $('#random8').text(randomArray[2].title);
       correctAnswer8 = randomArray[2].answer;
-      counter = counter + 1;
+     
+  
   });
-
+  
 });
   });
     });
       });
-        });
+        }); 
 
          
   
-console.log(counter);
+
 
 //once complete show final score
