@@ -169,6 +169,7 @@ $(function () {
      $("#char2").text(chrArray[0].title);
      correctAnswer2 = chrArray[0].answer;
      $('#parentChar2').addClass('has-background-success');
+
   });
   $('#parentPlace2').click(function(){
       counter = counter + 1;
@@ -176,13 +177,16 @@ $(function () {
       $('#place2').text(locArray[0].title);
       correctAnswer2 = locArray[0].answer;
       $('#parentPlace2').addClass('has-background-success');
+
   });
   $('#parentRandom2').click(function(){
     counter = counter + 1;
       $('#parentRandom2').unbind();
       $('#random2').text(randomArray[0].title);
       correctAnswer2 = randomArray[0].answer;
+
       $('#parentRandom2').addClass('has-background-success');
+
   });
   $('#parentChar6').click(function(){
       counter = counter + 1;
@@ -190,6 +194,7 @@ $(function () {
       $('#char6').text(chrArray[1].title);
       correctAnswer6 = chrArray[1].answer;
       $('#parentChar6').addClass('has-background-success');
+
   });
   $('#parentPlace6').click(function(){
       counter = counter + 1;
@@ -197,6 +202,7 @@ $(function () {
       $('#place6').text(locArray[1].title);
       correctAnswer6 = locArray[1].answer;
       $('#parentPlace6').addClass('has-background-success');
+
   });
   $('#parentRandom6').click(function(){
       counter = counter + 1;
@@ -204,6 +210,7 @@ $(function () {
       $('#random6').text(randomArray[1].title);
       correctAnswer6 = randomArray[1].answer;
       $('#parentRandom6').addClass('has-background-success');
+
   });
   $('#parentChar8').click(function(){
       counter = counter + 1;
@@ -211,13 +218,16 @@ $(function () {
       $('#char8').text(chrArray[2].title);
       correctAnswer8 = chrArray[2].title;
       $('#parentChar8').addClass('has-background-success');
+
   });
   $('#parentPlace8').click(function(){
       counter = counter + 1;
       $('#parentPlace8').unbind();
       $('#place8').text(locArray[2].title);
       correctAnswer8 = locArray[2].answer;
+
       $('#parentPlace8').addClass('has-background-success');
+
   });
   $('#parentRandom8').click(function(){
       counter = counter + 1;
@@ -225,6 +235,7 @@ $(function () {
       $('#random8').text(randomArray[2].title);
       correctAnswer8 = randomArray[2].answer;
      $('#parentRandom8').addClass('has-background-success');
+
   
   });
   
