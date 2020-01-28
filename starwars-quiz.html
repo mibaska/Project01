@@ -112,30 +112,27 @@
     </div>
   </div>
     </container>
-    <div class="footer" style="background-color: black;">
+    <div class="ender" style="background-color: black;">
         <p>
-          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</a>
+          <a href="rickandmorty-quiz.html"><strong>Try the Rick and Morty Quiz!</a>
           <br>
-          <a href="index.html">Home</a>
-          <br>
-          <a href="#">Check Highscores!</a></strong>
+          <a href="index.html">Home</a></strong>
         </p>
     
   </div>
-  <div class="modal">
+  <div class="modal" id="shin">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title"> View HighScores!</p>
-        <button class="delete" aria-label="close"></button>
+        <p class="modal-card-title"> View Your Score!</p>
+        <button class="delete" aria-label="close" id="tenet"></button>
       </header>
       <section class="modal-card-body">
-        <h1>HighScore:</h1>
+        <h1 id="tau"></h1>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success"> Try for a better Scrore</button>
-        <button class="button is-success">Back to HomE</button>
-        <button class="button">Cancel</button>
+        <button class="button is-success" id="sator"> Try for a better Score</button>
+        <button class="button is-success" id="arepo">Back to Home</button>
       </footer>
     </div>
   </div>
@@ -246,7 +243,10 @@
               }
               $("#iod").text("$200");
               $("#aleph").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -262,7 +262,10 @@
               }
               $("#iod").text("$200");
               $("#aleph").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -310,7 +313,10 @@
               $("#caph").text("$200");
               $("#beth").addClass("has-background-success");
               pleaseStop = "stop";
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -327,7 +333,10 @@
               $("#caph").text("$200");
               $("#beth").addClass("has-background-danger");
               pleaseStop = "stop";
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -374,7 +383,10 @@
               }
               $("#lamed").text("$200");
               $("#gimel").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -390,7 +402,10 @@
               }
               $("#lamed").text("$200");
               $("#gimel").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -437,7 +452,10 @@
               }
               $("#mem").text("$600");
               $("#daleth").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -453,7 +471,10 @@
               }
               $("#mem").text("$600");
               $("#daleth").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -500,7 +521,10 @@
               }
               $("#nun").text("$600");
               $("#he").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -516,7 +540,10 @@
               }
               $("#nun").text("$600");
               $("#he").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -563,7 +590,10 @@
               }
               $("#samech").text("$600");
               $("#vau").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -579,7 +609,10 @@
               }
               $("#samech").text("$600");
               $("#vau").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -626,7 +659,10 @@
               }
               $("#ain").text("$800");
               $("#zain").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -642,7 +678,10 @@
               }
               $("#ain").text("$800");
               $("#zain").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -689,7 +728,10 @@
               }
               $("#pe").text("$800");
               $("#cheth").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -705,7 +747,10 @@
               }
               $("#pe").text("$800");
               $("#cheth").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
@@ -752,7 +797,10 @@
               }
               $("#zade").text("$800");
               $("#theth").addClass("has-background-success");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             } else {
               count = count + 1;
               badTouch = false;
@@ -768,14 +816,24 @@
               }
               $("#zade").text("$800");
               $("#theth").addClass("has-background-danger");
-              console.log(count);
+              if(count === 9) {
+                $("#tau").text("Score: $" + score);
+                $("#shin").addClass("is-active");
+              }
             }
           });
         });
       });
-      if(count === 9) {
-        console.log("aggripa");
-      }
-      </script>
+
+      $("#sator").click(function() {
+        location.reload();
+      });
+      $("#arepo").click(function() {
+        window.location.href = "index.html"
+      });
+      $("#tenet").click(function() {
+        $("#shin").hide();
+      });
+    </script>
   </body>
 </html>
