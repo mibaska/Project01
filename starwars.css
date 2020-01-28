@@ -6,7 +6,7 @@ container {
     text-align: center;
     font-family: 'Special Elite', cursive;
 }
-.footer {
+.ender {
     position:fixed;
     background-color: black;
     font-family: 'Special Elite', cursive;
@@ -15,6 +15,5 @@ container {
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 10px;
-
+    height: 10%;
 }
