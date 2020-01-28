@@ -233,9 +233,9 @@ $(function () {
     });
       });
         }); 
-
-         
-  
-
-
 //once complete show final score
+
+function modal (){
+  
+};
+        
