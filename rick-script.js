@@ -1,6 +1,10 @@
 //original API URL
 const queryURL = 'https://rickandmortyapi.com/api/character/';
-
+var score = 0;
+var correctAnswer2;
+var correctAnswer6;
+var correctAnswer8;
+var counter = 0;
 //create ajax call
 $.ajax({
     url:queryURL,
@@ -61,16 +65,40 @@ $.ajax({
 
         ;
 
-//counter for items
-//keep score
 
 
 //display total at end of quiz
-//input button for answer
+
 //make user input all lowercase
 //make answer all lowercase
-//compare user answer to correct answer
 
+//compare user answer to correct answer
+$('#submit').click(function(){
+    var userAnswer = '';
+    userAnswer = $('#answer').val();
+    if (userAnswer == correctAnswer2){
+      score = score + 200;
+      console.log(score);
+      $('#answer').val('');
+     }
+      else if (userAnswer == correctAnswer6)
+     {
+       score = score + 600;
+       console.log(score);
+       $('#answer').val('');
+     }
+      else if (userAnswer == correctAnswer8){
+       score = score + 800;
+       console.log(score);
+       $('#answer').val('');
+      }
+      else {
+        score = score;
+        console.log(score);
+        $('#answer').val('');
+      }
+     
+});
 
 //array for character questions
 var chrArray = [
@@ -130,43 +158,62 @@ var randomArray = [
     },
 ];
 
+//pass questions to HTML
 //functions for displaying questions
 $(function () {
   $('#parentChar2').click(function(){
     $('#parentChar2').unbind();
      $("#char2").text(chrArray[0].title);
+     correctAnswer2 = chrArray[0].answer;
+     counter = counter + 1;
   });
   $('#parentPlace2').click(function(){
       $('#parentPlace2').unbind();
       $('#place2').text(locArray[0].title);
+      correctAnswer2 = locArray[0].answer;
+      counter = counter + 1;
   });
   $('#parentRandom2').click(function(){
       $('#parentRandom2').unbind();
       $('#random2').text(randomArray[0].title);
+      correctAnswer2 = randomArray[0].answer;
+      counter = counter + 1;
   });
   $('#parentChar6').click(function(){
       $('#parentChar6').unbind();
       $('#char6').text(chrArray[1].title);
+      correctAnswer6 = chrArray[1].answer;
+      counter = counter + 1;
   });
   $('#parentPlace6').click(function(){
       $('parentPlace6').unbind();
       $('#place6').text(locArray[1].title);
+      correctAnswer6 = locArray[1].answer;
+      counter = counter + 1;
   });
   $('#parentRandom6').click(function(){
       $('#parentRandom6').unbind();
       $('#random6').text(randomArray[1].title);
+      correctAnswer6 = randomArray[1].answer;
+      counter = counter + 1;
   });
   $('#parentChar8').click(function(){
       $('#parentChar8').unbind();
       $('#char8').text(chrArray[2].title);
+      correctAnswer8 = chrArray[2].title;
+      counter = counter + 1;
   });
   $('#parentPlace8').click(function(){
       $('#parentPlace8').unbind();
       $('#place8').text(locArray[2].title);
+      correctAnswer8 = locArray[2].answer;
+      counter = counter + 1;
   });
   $('#parentRandom8').click(function(){
       $('#parentRandom8').unbind();
       $('#random8').text(randomArray[2].title);
+      correctAnswer8 = randomArray[2].answer;
+      counter = counter + 1;
   });
 
 });
@@ -174,20 +221,9 @@ $(function () {
     });
       });
         });
-//pass questions to HTML
 
-
+         
   
-//submit answer to check
-$('button').on('click', function(event){
-    //variable for user answer
-    const answer = $('.submitbox').val().trim();
+console.log(counter);
 
-});
-//array for answers
-const usrAnswer = [];
-//array for user input answer
-//compare user answer to correct answer
-//track score
-const score = '';
 //once complete show final score
