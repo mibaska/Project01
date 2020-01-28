@@ -2,17 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <title>Rick and Morty Quiz</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="rickmorty.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -28,6 +25,21 @@
       </div>
     </section>
     <div class="message-body">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    
+    <title>Rick and Morty Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <container>
     <div class="tile is-ancestor" style="text-align: center;">
       <div class="tile is-parent">
         <article class="tile is-child box">
@@ -48,57 +60,57 @@
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="date2">
-          <p class="title">$200</p>
+      <div class="tile is-parent" id="parentChar2">
+        <article class="tile is-child box">
+          <p class="title" id="char2">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="place2">
-          <p class="title">$200</p>
+      <div class="tile is-parent" id="parentPlace2">
+        <article class="tile is-child box">
+          <p class="title" id="place2">$200</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="random2">
-          <p class="title">$200</p>
+      <div class="tile is-parent" id="parentRandom2">
+        <article class="tile is-child box">
+          <p class="title" id="random2">$200</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="date6">
-          <p class="title">$600</p>
+      <div class="tile is-parent" id="parentChar6">
+        <article class="tile is-child box">
+          <p class="title" id="char6">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="place6">
-          <p class="title">$600</p>
+      <div class="tile is-parent" id="parentPlace6">
+        <article class="tile is-child box">
+          <p class="title" id="place6">$600</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="random6">
-          <p class="title">$600</p>
+      <div class="tile is-parent" id="parentRandom6">
+        <article class="tile is-child box">
+          <p class="title" id="random6">$600</p>
           <div class="content">
           </div>
         </article>
       </div>
     </div>
     <div class="tile is-ancestor" style="text-align: center;">
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="date8">
-          <p class="title">$800</p>
+      <div class="tile is-parent" id="parentChar8">
+        <article class="tile is-child box">
+          <p class="title" id="char8">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="place8">
-          <p class="title">$800</p>
+      <div class="tile is-parent" id="parentPlace8">
+        <article class="tile is-child box">
+          <p class="title" id="place8">$800</p>
         </article>
       </div>
-      <div class="tile is-parent">
-        <article class="tile is-child box" id="random8">
-          <p class="title">$800</p>
+      <div class="tile is-parent" id="parentRandom8">
+        <article class="tile is-child box">
+          <p class="title" id="random8">$800</p>
           <div class="content">
           </div>
         </article>
@@ -145,7 +157,18 @@
   </div>
 
 
-    <script src="script.js"></script>
-</body>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <input class="input" type="text" placeholder="Answer here" id="answer">
+      </div>
+      <div class="control ">
+        <a class="button is-black" id="res">Submit</a>
+      </div>
+    </div>
+  </container>     
+    <script src="./rick-script.js"></script>
 
+
+    <script src="script.js"></script>
+  </body>
 </html>
