@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Star Wars Quiz</title>
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="starwars.css">
     <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -112,10 +114,30 @@
     </container>
     <div class="footer" style="background-color: black;">
         <p>
-          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</strong></a>
+          <a href="rickandmorty-quiz.html"> <strong>Try the Rick and Morty Quiz!</a>
+          <br>
           <a href="index.html">Home</a>
+          <br>
+          <a href="#">Check Highscores!</a></strong>
         </p>
     
+  </div>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"> View HighScores!</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <h1>HighScore:</h1>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success"> Try for a better Scrore</button>
+        <button class="button is-success">Back to HomE</button>
+        <button class="button">Cancel</button>
+      </footer>
+    </div>
   </div>
         
     <script src="script.js"></script>
