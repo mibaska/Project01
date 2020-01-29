@@ -1,0 +1,26 @@
+container {
+    box-sizing: content-box;
+}
+.title {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Special Elite', cursive;
+}
+.ender {
+    position:fixed;
+    background-color: black;
+    font-family: 'Special Elite', cursive;
+    font-size: 18px;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 9%;
+    padding: 20px;
+
+}
+
+.modal {
+    font-family: 'Special Elite', cursive;
+
+}
