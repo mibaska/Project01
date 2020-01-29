@@ -101,7 +101,7 @@ $('#submit').click(function(){
       }
       
       //once complete show final score
-      if (counter = 9){
+      if (counter == 9){
         $('#score').text('Score: $ ' + score);
         $('.modal').addClass('is-active');
       };
@@ -240,5 +240,14 @@ $(function () {
       });
         }); 
 
+        $("#rick").click(function() {
+          location.reload();
+        });
+        $("#home").click(function() {
+          window.location.href = "index.html"
+        });
+        $(".modal").click(function() {
+          $("#shin").hide();
+        });
 
         
