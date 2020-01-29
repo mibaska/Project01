@@ -54,7 +54,7 @@ html {
   .mainIMG{
     width: 600px;
     position: absolute;
-        top: 60%;
+        top: 70%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%); 
